@@ -1,16 +1,27 @@
 import React from "react";
 import { Award, Target, Eye, Heart } from "lucide-react";
+import team from "@/public/Business team working on laptop to check the results of their work_ | Premium Photo.jpg";
 
 export default function About() {
   return (
     <div className="w-full bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 to-teal-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-xl text-slate-300 max-w-2xl">
-            Leading the way in sustainable hydropower development
-          </p>
+      <section
+        style={{
+          backgroundImage: `url("${team.src}")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="w-full max-h-100 h-screen text-white"
+      >
+        <div className="bg-black/40 w-full max-h-100 h-screen flex items-center justify-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
+            <p className="text-xl text-slate-300 max-w-2xl">
+              Leading the way in sustainable hydropower development
+            </p>
+          </div>
         </div>
       </section>
 

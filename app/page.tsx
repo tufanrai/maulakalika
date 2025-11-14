@@ -78,24 +78,26 @@ export default function Home() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="relative bg-slate-100 overflow-hidden"
+        className="relative overflow-hidden"
       >
-        <div className="max-w-7xl bg-linear-60 from-black/50 to-white/0 mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="ml-12">
-              <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Harnessing Nature's Power for a Sustainable Future
-              </h1>
-              <p className="text-lg text-stone-300 mb-8 leading-relaxed">
-                Maulika Hydropower Company Ltd. is dedicated to engineering
-                clean, renewable energy through advanced hydropower solutions,
-                ensuring a brighter and more sustainable tomorrow for all.
-              </p>
-              <Link href={"/prjects"}>
-                <button className="bg-slate-900 hover:bg-slate-800 text-white rounded-md px-5 py-2">
-                  Explore Our Projects
-                </button>
-              </Link>
+        <div className="w-full bg-linear-60 from-black/70 to-white/0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="ml-12">
+                <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                  Harnessing Nature's Power for a Sustainable Future
+                </h1>
+                <p className="text-lg text-stone-300 mb-8 leading-relaxed">
+                  Maulika Hydropower Company Ltd. is dedicated to engineering
+                  clean, renewable energy through advanced hydropower solutions,
+                  ensuring a brighter and more sustainable tomorrow for all.
+                </p>
+                <Link href={"/prjects"}>
+                  <button className="bg-slate-900 hover:bg-slate-800 text-white rounded-md px-5 py-2">
+                    Explore Our Projects
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

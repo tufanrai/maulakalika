@@ -6,7 +6,7 @@ import logo from "@/public/uploaded_logo.png";
 const Navbar = () => {
   return (
     <div className="w-full">
-      <header className="w-full px-5 md:px-8 flex flex-col items-center justify-center">
+      <header className="w-full flex flex-col items-center justify-center">
         {/* sub nav */}
         <div className="max-w-[1280px] w-full px-5 md:px-8 flex items-center justify-end gap-4 bg-white py-2">
           <span className="flex items-center justify-center gap-2 italic text-nav underline cursor-pointer ease duration-300 text-black hover:text-primary">
@@ -17,9 +17,9 @@ const Navbar = () => {
           </span>
         </div>
         {/* main nav */}
-        <div className="w-full px-5 md:px-8 flex items-center jusitfy-center bg-primary">
-          <div className="max-w-[1280px] w-full px-5 md:px-8 flex items-center jusitfy-center">
-            <ul className=" w-full flex items-center justify-end gap-2 py-4 px-5 text-stone-100">
+        <div className="w-full flex items-center bg-primary">
+          <div className="w-full flex justify-center px-5 md:px-8">
+            <ul className="max-w-[1280px] w-full flex items-center justify-end gap-2 py-4 px-5 text-stone-100">
               <li className="mr-auto">
                 <Link href={"/"}>
                   <div

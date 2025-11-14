@@ -1,16 +1,27 @@
 import React from "react";
+import events from "@/public/Networking Event Interaction.jpg";
 
 export default function News() {
   return (
     <div className="w-full bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 to-teal-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Latest News</h1>
-          <p className="text-xl text-slate-300 max-w-2xl">
-            Stay updated with our latest projects, achievements, and
-            announcements
-          </p>
+      <section
+        style={{
+          backgroundImage: `url("${events.src}")`,
+          backgroundPosition: "top",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+        className=" text-white w-full"
+      >
+        <div className="w-full bg-black/40 flex items-center justify-center py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Latest News</h1>
+            <p className="text-xl text-slate-300 max-w-2xl">
+              Stay updated with our latest projects, achievements, and
+              announcements
+            </p>
+          </div>
         </div>
       </section>
 

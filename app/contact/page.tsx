@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import hero from "@/public/Hydro electric power plant stock image_ Image of powerplant - 19361119.jpg";
+import hero from "@/public/It's a deal!.jpg";
 
 export default function Contact() {
   return (
@@ -14,13 +14,15 @@ export default function Contact() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className=" text-white py-20"
+        className=" text-white"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-slate-300 max-w-2xl">
-            Get in touch with our team. We're here to help.
-          </p>
+        <div className="w-full bg-black/40 flex items-center justify-center py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+            <p className="text-xl text-slate-300 max-w-2xl">
+              Get in touch with our team. We're here to help.
+            </p>
+          </div>
         </div>
       </section>
 
