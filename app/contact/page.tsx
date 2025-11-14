@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import hero from "@/public/It's a deal!.jpg";
+import { AiOutlineSend } from "react-icons/ai";
 
 export default function Contact() {
   return (
@@ -39,7 +40,11 @@ export default function Contact() {
                 <label className="block text-sm font-medium text-slate-700 mb-2">
                   Your Name
                 </label>
-                <input required placeholder="John Doe" className="bg-white" />
+                <input
+                  required
+                  placeholder="John Doe"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -49,7 +54,7 @@ export default function Contact() {
                   type="email"
                   required
                   placeholder="john@example.com"
-                  className="bg-white"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
                 />
               </div>
               <div>
@@ -59,7 +64,7 @@ export default function Contact() {
                 <input
                   required
                   placeholder="How can we help?"
-                  className="bg-white"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
                 />
               </div>
               <div>
@@ -70,17 +75,15 @@ export default function Contact() {
                   required
                   placeholder="Tell us more about your inquiry..."
                   rows={5}
-                  className="bg-white"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700"
+                className="w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 flex items-center justify-center gap-2 rounded-md py-3 font-semibold text-lg"
               >
-                <>
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </>
+                <AiOutlineSend className="w-4 h-4 mr-2 font-black text-7xl -rotate-45 ease duration-300 hover:rotate-0" />
+                Send Message
               </button>
             </form>
           </div>
@@ -149,18 +152,19 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-
-            {/* Map */}
-            <div className="aspect-video bg-slate-200 rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=600&fit=crop"
-                alt="Location Map"
-                className="w-full h-full object-cover"
-              />
-            </div>
           </div>
         </div>
       </section>
+      {/* Map */}
+      <div className="w-full flex justify-center py-8">
+        <div className="max-w-[1280px] max-h-100 h-screen w-full aspect-video bg-slate-200 rounded-2xl overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=600&fit=crop"
+            alt="Location Map"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
     </div>
   );
 }

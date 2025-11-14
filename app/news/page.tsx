@@ -1,5 +1,6 @@
 import React from "react";
 import events from "@/public/Networking Event Interaction.jpg";
+import Project_news_card from "@/components/cards/project_news_card";
 
 export default function News() {
   return (
@@ -28,9 +29,14 @@ export default function News() {
       {/* News Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="col-span-full text-center py-12">
-            <p className="text-slate-500">No news articles available yet.</p>
-          </div>
+          <Project_news_card />
+          <Project_news_card />
+          <Project_news_card />
+          <Project_news_card />
+          <Project_news_card />
+          <Project_news_card />
+          <Project_news_card />
+          <Project_news_card />
         </div>
       </section>
     </div>
