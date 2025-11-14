@@ -1,113 +1,90 @@
-// components/Hero.js
 import React from "react";
+import { Award, Target, Eye, Heart } from "lucide-react";
 
-const Hero = () => {
-  const values = [
-    {
-      title: "Environmental Stewardship",
-      description:
-        "We are committed to minimizing our ecological footprint and preserving natural habitat around our operations.",
-    },
-    {
-      title: "Integrity & Transparency",
-      description:
-        "Upholding the highest ethical standards in all our countries, fostering trust with stakeholders and the public.",
-    },
-    {
-      title: "Innovation & Excellence",
-      description:
-        "Continuously assisting advanced technologies and best reinforces the enhance efficiency and reliability in hydropower generation.",
-    },
-    {
-      title: "Safety First",
-      description:
-        "Prioritizing the health and safety of our employees, contractors, and the communities where we operate.",
-    },
-    {
-      title: "Community Partnership",
-      description:
-        "Engaging with local communities, supporting development initiatives, and ensuring direct prosperity.",
-    },
-    {
-      title: "Reliable Energy",
-      description:
-        "Delivering consistent, clean, and affordable hydropower to meet the growing energy demands of the region.",
-    },
-  ];
+export default function About() {
   return (
-    <>
-      <section className="hero" id="home">
-        <div className="container">
-          <div className="hero-content">
-            <h1>Powering a Sustainable Future with Dam Energy</h1>
-            <p>
-              Must India, Dangerous Congress use its guidelines to innovating
-              the power of energy generation and innovation in energy markets,
-              considering new applications in digital and industrial.
-            </p>
-            <button className="cta-button">Learn More About Our Matters</button>
-          </div>
+    <div className="w-full bg-white">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-slate-900 to-teal-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
+          <p className="text-xl text-slate-300 max-w-2xl">
+            Leading the way in sustainable hydropower development
+          </p>
         </div>
       </section>
-      <section className="journey" id="about">
-        <div className="container">
-          <h2>Our Journey: A Legacy of Power and Progress</h2>
-          <div className="journey-content">
-            <p>
-              Established with a vision to revolutionize Nepal's energy sector,
-              Mazi Kafka Dempower Company Ltd. embarked on its journey to
-              harness the abundant hydro resources of this Himalayan nation. Our
-              commitment to sustainable development has driven us to overcome
-              challenges and achieve significant milestones in power generation.
-            </p>
-            <p>
-              From our initial projects to our current expansive operations, we
-              have consistently prioritized engineering excellence,
-              environmental sustainability, and community engagement. Our
-              ability is a testament to our enduring dedication to providing
-              clean energy that lights up homes and fuels economic growth across
-              the nation.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className="values" id="values">
-        <div className="container">
-          <h2>Our Core Values: Guiding Principles for a Brighter Tomorrow</h2>
-          <div className="values-grid">
-            {values.map((value, index) => (
-              <div key={index} className="value-card">
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="sustainability" id="sustainability">
-        <div className="container">
-          <h2>Commitment to Sustainability: Protecting Our Planet</h2>
-          <div className="sustainability-content">
-            <p>
-              At Mazi Kafka Dempower, sustainability is at the heart of
-              everything we do. We understand the critical balance between
-              energy production and ecological preservation. Our projects are
-              meticulously planned and executed to ensure minimal environmental
-              impact and maximal positive social contribution.
-            </p>
-            <p>
-              We invest in advanced technologies for efficient water management,
-              undertake extensive conservation programs, and implement robust
-              biodiversity protection measures. Our goal is to test only
-              greenish clean energy due to losing a healthier planet for future
-              generations, ensuring our operations contribute to a greater, more
-              resilient world.
-            </p>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
 
-export default Hero;
+      {/* Content */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Our Story
+            </h2>
+            <div className="space-y-4 text-slate-700 leading-relaxed">
+              <p>
+                Maulika Hydropower Company was founded with a vision to harness
+                Nepal's abundant water resources for sustainable energy
+                generation. Our journey began with a commitment to environmental
+                stewardship and community development.
+              </p>
+              <p>
+                Today, we operate multiple hydropower facilities across the
+                region, providing clean energy to thousands while maintaining
+                our dedication to ecological balance and social responsibility.
+              </p>
+            </div>
+          </div>
+          <div className="aspect-video bg-slate-200 rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop"
+              alt="Hydropower facility"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Values */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              icon: Target,
+              title: "Our Mission",
+              description:
+                "To provide sustainable, reliable, and affordable hydroelectric power while protecting the environment.",
+            },
+            {
+              icon: Eye,
+              title: "Our Vision",
+              description:
+                "To be the leading renewable energy provider in the region, setting standards for excellence.",
+            },
+            {
+              icon: Award,
+              title: "Excellence",
+              description:
+                "We maintain the highest standards in engineering, safety, and operational efficiency.",
+            },
+            {
+              icon: Heart,
+              title: "Community",
+              description:
+                "We invest in local communities and create lasting positive impacts.",
+            },
+          ].map((value, index) => (
+            <div
+              key={index}
+              className="bg-gradient-to-br from-slate-50 to-teal-50 rounded-2xl p-6 border border-slate-200"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <value.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2">{value.title}</h3>
+              <p className="text-sm text-slate-600">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}

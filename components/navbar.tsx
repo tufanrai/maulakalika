@@ -5,8 +5,8 @@ import logo from "@/public/uploaded_logo.png";
 
 const Navbar = () => {
   return (
-    <div className="w-full flex items-center justify-center">
-      <header className="w-full px-5 md:px-8">
+    <div className="w-full">
+      <header className="w-full px-5 md:px-8 flex flex-col items-center justify-center">
         {/* sub nav */}
         <div className="max-w-[1280px] w-full px-5 md:px-8 flex items-center justify-end gap-4 bg-white py-2">
           <span className="flex items-center justify-center gap-2 italic text-nav underline cursor-pointer ease duration-300 text-black hover:text-primary">
@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="max-w-[1280px] w-full px-5 md:px-8 flex items-center jusitfy-center">
             <ul className=" w-full flex items-center justify-end gap-2 py-4 px-5 text-stone-100">
               <li className="mr-auto">
-                <Link href={"#"}>
+                <Link href={"/"}>
                   <div
                     style={{
                       backgroundImage: `url("${logo.src}")`,
@@ -34,22 +34,22 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="mx-2">
-                <Link href={"#"}>Home</Link>
+                <Link href={"/"}>Home</Link>
               </li>
               <li className="mx-2">
-                <Link href={"#"}>About us</Link>
+                <Link href={"/about"}>About us</Link>
               </li>
               <li className="mx-2">
-                <Link href={"#"}>News&Events</Link>
+                <Link href={"/news"}>News&Events</Link>
               </li>
               <li className="mx-2">
-                <Link href={"#"}>Downloads</Link>
+                <Link href={"/downloads"}>Downloads</Link>
               </li>
               <li className="mr-auto">
-                <Link href={"#"}>Gallery</Link>
+                <Link href={"/gallery"}>Gallery</Link>
               </li>
               <li>
-                <Link href={"#"}>
+                <Link href={"/contact"}>
                   <button className="px-5 py-2 rounded-md font-regural text-md text-black bg-stone-100 shadow-stone-100 shadow-lg/20 cursor-pointer">
                     Contact us
                   </button>
