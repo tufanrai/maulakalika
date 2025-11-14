@@ -2,7 +2,7 @@ import React from "react";
 
 export default function News() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="w-full bg-white">
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-teal-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

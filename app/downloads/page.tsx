@@ -84,7 +84,7 @@ export default function Downloads() {
                     <span>{item.size}</span>
                   </div>
                 </div>
-                <button className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 flex-shrink-0">
+                <button className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 flex-shrink-0 flex items-center justify-center px-5 py-1 rounded-md">
                   <Download className="w-4 h-4 mr-2" />
                   Download
                 </button>
