@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import hero from "@/public/Hydro electric power plant stock image_ Image of powerplant - 19361119.jpg";
+import Project_news_card from "@/components/cards/project_news_card";
 
 export default function Home() {
   const stats = [
@@ -221,72 +222,10 @@ export default function Home() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* {newsLoading ? (
-              Array(6)
-                .fill(0)
-                .map((_, i) => (
-                  <div
-                    key={i}
-                    className="bg-white rounded-2xl p-6 border border-slate-200 animate-pulse"
-                  >
-                    <div className="h-6 bg-slate-200 rounded mb-3"></div>
-                    <div className="h-4 bg-slate-200 rounded mb-2"></div>
-                    <div className="h-4 bg-slate-200 rounded w-2/3"></div>
-                  </div>
-                ))
-            ) : newsItems.length > 0 ? (
-              newsItems.map((news) => (
-                <div
-                  key={news.id}
-                  className="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer"
-                >
-                  {news.image_url && (
-                    <div className="aspect-video bg-slate-100 rounded-xl mb-4 overflow-hidden">
-                      <img
-                        src={news.image_url}
-                        alt={news.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  )}
-                  <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
-                    <Calendar className="w-3 h-3" />
-                    <span>{news.category?.replace(/_/g, " ")}</span>
-                  </div>
-                  {news.publish_date && (
-                    <div className="text-xs text-teal-600 font-medium mb-2">
-                      {new Date(news.publish_date).toLocaleDateString("en-US", {
-                        month: "long",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </div>
-                  )}
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-teal-600 transition-colors">
-                    {news.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 line-clamp-2">
-                    {news.summary}
-                  </p>
-                </div>
-              ))
-            ) : ( */}
-            <div className="col-span-full text-center py-12">
-              <p className="text-slate-500">No news articles available yet.</p>
-            </div>
-            {/* // )} */}
+            <Project_news_card />
+            <Project_news_card />
+            <Project_news_card />
           </div>
-
-          {/* {newsItems.length > 0 && (
-            <div className="text-center mt-12">
-              <Link href={"/news"}>
-                <button>
-                  View All News
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
-              </Link>
-            </div>
-          )} */}
         </div>
       </section>
     </div>
