@@ -1,4 +1,5 @@
 import Gallery_card from "@/components/cards/Gallery_card";
+import SearchAndFilterCard from "@/components/cards/SearchAndFilterCard";
 import React from "react";
 
 const page = () => {

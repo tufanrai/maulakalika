@@ -1,6 +1,7 @@
 import React from "react";
 import events from "@/public/Networking Event Interaction.jpg";
 import Project_news_card from "@/components/cards/project_news_card";
+import SearchAndFilterCard from "@/components/cards/SearchAndFilterCard";
 
 export default function News() {
   return (
@@ -24,6 +25,11 @@ export default function News() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Search section */}
+      <section className="w-full flex items-center justify-center relative pt-12">
+        <SearchAndFilterCard />
       </section>
 
       {/* News Grid */}

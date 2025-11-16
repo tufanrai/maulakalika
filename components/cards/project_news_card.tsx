@@ -19,7 +19,7 @@ const defaultValues: IProps = {
 const Project_news_card = ({ image, title, description }: IProps) => {
   let upload = image ?? defaultValues.image;
   return (
-    <div className="max-w-[276px] max-h-[386px] w-full h-screen rounded-md shadow-lg/30 shadow-stone-400 p-2 flex flex-col items-center justify-start gap-1 cursor-pointer ease duration-300 hover:scale-102">
+    <div className="max-w-[276px] max-h-[386px] w-full h-screen rounded-md shadow-lg/30 shadow-stone-400 p-2 flex flex-col items-center justify-start gap-1 cursor-pointer ease duration-300 hover:scale-102 hover:shadow-primary">
       <div
         style={{
           backgroundImage: `url("${upload}")`,

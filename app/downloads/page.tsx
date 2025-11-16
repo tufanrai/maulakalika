@@ -1,6 +1,7 @@
 import React from "react";
 import { FileText, Download, FileImage, FileSpreadsheet } from "lucide-react";
 import documents from "@/public/landscaper business card.jpg";
+import SearchAndFilterCard from "@/components/cards/SearchAndFilterCard";
 
 export default function Downloads() {
   const downloads = [
@@ -60,7 +61,7 @@ export default function Downloads() {
         }}
         className="w-full text-white"
       >
-        <div className="w-full bg-black/40 py-20 flex items-center justify-center">
+        <div className="w-full bg-black/40 py-30 flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Downloads</h1>
             <p className="text-xl text-slate-300 max-w-2xl">
@@ -68,6 +69,11 @@ export default function Downloads() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Search section */}
+      <section className="w-full flex items-center justify-center relative pt-12">
+        <SearchAndFilterCard />
       </section>
 
       {/* Downloads List */}

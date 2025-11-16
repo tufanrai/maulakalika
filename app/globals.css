@@ -4,12 +4,16 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary-nave: rgb(5, 35, 97);
+  --gradient-color: #364E80;
+  --gradient-color2: #9BA7BF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary-nave);
+  --color-secondary: var(--gradient-color);
+  --color-third: var(--gradient-color2);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
