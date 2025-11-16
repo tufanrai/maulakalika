@@ -29,7 +29,7 @@ const Project_news_card = ({ image, title, description }: IProps) => {
         }}
         className="max-w-[250px] max-h-[156px] w-full h-screen rounded-sm bg-stone-300"
       ></div>
-      <h6 className="w-full px-2 py-1 text-start mx-2 font-semibold text-lg text-black">
+      <h6 className="w-full px-2 py-1 text-start mx-2 font-semibold text-lg/6 text-black">
         {title ?? defaultValues.title}
       </h6>
       <p className="max-w-[250px] max-h-[140px] w-full h-screen overflow-hidden font-regural text-sm/5 px-2 text-stone-400/70">
