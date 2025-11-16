@@ -46,6 +46,42 @@ urjakhabar.com
 +2
  The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
           />
+          <Project_news_card
+            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
+            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
+urjasanchar.com
++2
+urjakhabar.com
++2
+ The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
+          />
+          <Project_news_card
+            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
+            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
+urjasanchar.com
++2
+urjakhabar.com
++2
+ The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
+          />
+          <Project_news_card
+            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
+            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
+urjasanchar.com
++2
+urjakhabar.com
++2
+ The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
+          />
+          <Project_news_card
+            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
+            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
+urjasanchar.com
++2
+urjakhabar.com
++2
+ The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
+          />
         </div>
       </section>
     </div>
