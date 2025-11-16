@@ -190,7 +190,7 @@ export default function Home() {
           {/* Timeline Line */}
           <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-slate-200 hidden md:block"></div>
 
-          <div className="grid md:grid-cols-4 gap-8 relative border">
+          <div className="grid md:grid-cols-4 gap-8 relative">
             {legacyProjects.map((project, index) => (
               <div key={index} className="relative">
                 {/* Timeline Dot */}

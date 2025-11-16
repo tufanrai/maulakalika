@@ -8,7 +8,7 @@ import Link from "next/link";
 const FooterBar = () => {
   return (
     <div className="w-full bg-primary px-5 md:px-8 py-4 flex flex-col items-center justify-center">
-      <div className="max-w-[1280px] w-full flex items-center justify-around gap-4">
+      <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-start md:items-center justify-around gap-4 px-5">
         <div className="w-1/2 flex flex-col items-start justify-start gap-1 p-5">
           <div
             style={{
