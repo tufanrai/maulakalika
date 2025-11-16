@@ -10,15 +10,17 @@ const FooterBar = () => {
     <div className="w-full bg-primary px-5 md:px-8 py-4 flex flex-col items-center justify-center">
       <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-start md:items-center justify-around gap-4 px-5">
         <div className="w-1/2 flex flex-col items-start justify-start gap-1 p-5">
-          <div
-            style={{
-              backgroundImage: `url("${logo.src}")`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            className="w-[55px] h-[55px] rounded-full"
-          ></div>
+          <Link href={"/"}>
+            <div
+              style={{
+                backgroundImage: `url("${logo.src}")`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              className="w-[55px] h-[55px] rounded-full"
+            ></div>
+          </Link>
           <p className="w-[204px] font-medium text-md mt-4">
             123 Hydroelectric Road, Aqua City, Waterfalls 98765
           </p>

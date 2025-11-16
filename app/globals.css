@@ -30,3 +30,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+*{
+  scroll-behavior: smooth;
+}
+
+
+/* Style the entire scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+}
