@@ -157,12 +157,14 @@ export default function Contact() {
       </section>
       {/* Map */}
       <div className="w-full flex justify-center py-8">
-        <div className="max-w-[1280px] max-h-100 h-screen w-full aspect-video bg-slate-200 rounded-2xl overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=600&fit=crop"
-            alt="Location Map"
-            className="w-full h-full object-cover"
-          />
+        <div className="max-w-[1280px] max-h-125 h-screen w-full aspect-video bg-slate-200 rounded-2xl overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56506.53295636403!2d85.25438924863278!3d27.727834300000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1915950f9d31%3A0xaf075cc9ad4db59c!2sKalika%20Construction!5e0!3m2!1sen!2snp!4v1763381512376!5m2!1sen!2snp"
+            width="600"
+            height="500"
+            className=" w-full"
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </div>

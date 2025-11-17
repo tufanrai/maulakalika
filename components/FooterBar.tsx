@@ -67,15 +67,13 @@ const FooterBar = () => {
 
         <div className="w-1/2 flex flex-col items-start justify-start gap-1">
           <h6 className="font-semibold text-lg">View us</h6>
-          <div
-            style={{
-              backgroundImage: `url("${map.src}")`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            className="w-[150px] h-[150px] rounded-sm shadow-md/30 shadow-stone-100"
-          ></div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56506.53295636403!2d85.25438924863278!3d27.727834300000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1915950f9d31%3A0xaf075cc9ad4db59c!2sKalika%20Construction!5e0!3m2!1sen!2snp!4v1763381512376!5m2!1sen!2snp"
+            width="150"
+            height="150"
+            className="max-w-[150px] max-h-[150px] w-full h-screen rounded-sm shadow-md/30 shadow-stone-100"
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
       <hr className="max-w-[1280px] w-full h-1 mt-5" />
