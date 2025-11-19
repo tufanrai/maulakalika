@@ -1,54 +1,29 @@
+"use client";
 import React from "react";
-import { FileText, Download, FileImage, FileSpreadsheet } from "lucide-react";
+import { Download, FileIcon, Eye, UserRound } from "lucide-react";
 import documents from "@/public/landscaper business card.jpg";
 import SearchAndFilterCard from "@/components/cards/SearchAndFilterCard";
+import { useQuery } from "@tanstack/react-query";
+import fetchDownloadFiles from "../api/download.api";
+
+interface IProps {
+  title: string;
+  description: string;
+  type: string;
+  size: string;
+  icon: any;
+  url: string;
+}
 
 export default function Downloads() {
-  const downloads = [
-    {
-      title: "Project Overview Brochure",
-      description: "Comprehensive overview of the Kalika Kaligandaki project",
-      type: "PDF",
-      size: "2.4 MB",
-      icon: FileText,
-    },
-    {
-      title: "Technical Specifications",
-      description: "Detailed technical documentation and specifications",
-      type: "PDF",
-      size: "5.1 MB",
-      icon: FileText,
-    },
-    {
-      title: "Environmental Impact Assessment",
-      description: "Complete environmental impact study report",
-      type: "PDF",
-      size: "8.7 MB",
-      icon: FileText,
-    },
-    {
-      title: "Project Images Gallery",
-      description: "High-resolution images of the facility and surroundings",
-      type: "ZIP",
-      size: "42 MB",
-      icon: FileImage,
-    },
-    {
-      title: "Annual Report 2024",
-      description: "Financial and operational highlights of the year",
-      type: "PDF",
-      size: "3.2 MB",
-      icon: FileSpreadsheet,
-    },
-    {
-      title: "Safety Guidelines",
-      description: "Safety protocols and visitor guidelines",
-      type: "PDF",
-      size: "1.8 MB",
-      icon: FileText,
-    },
-  ];
+  const { data, error, isPending, isError, isSuccess } = useQuery({
+    queryKey: ["Fetch Downloads"],
+    queryFn: fetchDownloadFiles,
+  });
 
+  const [view, setView] = React.useState<boolean>(false);
+
+  console.log(data?.files.at(0).url);
   return (
     <div className="w-full bg-white">
       {/* Hero */}
@@ -78,36 +53,50 @@ export default function Downloads() {
 
       {/* Downloads List */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="space-y-4">
-          {downloads.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-1 group-hover:text-teal-600 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 mb-3">
-                    {item.description}
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-slate-500">
-                    <span className="font-medium">{item.type}</span>
-                    <span>•</span>
-                    <span>{item.size}</span>
+        <div className="space-y-4 overflow-y-auto overflow-x-hidden">
+          {data && data?.files ? (
+            <>
+              {data?.files?.map((file: IProps, index: number) => (
+                <div className="w-full flex flex-col sm:flex-row items-start sm:items-start justify-between p-4 bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition">
+                  {/* File Icon Right */}
+                  <div className="text-gray-700">
+                    <FileIcon size={40} />
+                  </div>
+                  {/* Middle Title + Description */}
+                  <div className="w-100 sm:w-full flex-1 p-2 pb-3 sm:px-6 text-start sm:text-left mt-3 sm:mt-0">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {file.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-1">
+                      {file.description}
+                    </p>
+                  </div>
+
+                  {/* Left Controls */}
+                  <div className="max-w-160 flex flex-row sm:flex-col items-center justify-around gap-2">
+                    <button className="max-w-80 w-full flex items-center justify-center gap-1 px-3 py-1 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700">
+                      <Download size={16} /> Download
+                    </button>
+
+                    <button className="max-w-80 w-full flex items-center justify-center gap-1 px-3 py-1 bg-green-600 text-white rounded-md text-sm hover:bg-green-700">
+                      <Eye size={16} /> View
+                    </button>
+                  </div>
+                  {/* iframe */}
+                  <div className="w-full h-screen bg-black/20 absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] flex items-center jusitfy-center">
+                    <iframe
+                      src={`${file.url}`}
+                      width={"900"}
+                      height={"860"}
+                      className="max-w-[900px] max-h-[860px] w-full h-screen rounded-lg"
+                    ></iframe>
                   </div>
                 </div>
-                <button className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 flex-shrink-0 flex items-center justify-center px-5 py-1 rounded-md">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download
-                </button>
-              </div>
-            </div>
-          ))}
+              ))}
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </section>
     </div>

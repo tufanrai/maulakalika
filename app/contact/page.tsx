@@ -1,10 +1,47 @@
 "use client";
-import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import hero from "@/public/It's a deal!.jpg";
 import { AiOutlineSend } from "react-icons/ai";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import mailSchema from "@/components/schema/mail.schema";
+import { IForm } from "@/components/interface/interfaces";
+import { useMutation } from "@tanstack/react-query";
+import mailAdmin from "../api/mail.api";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function Contact() {
+  const router = useRouter();
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: mailAdmin,
+    mutationKey: ["New Mail"],
+    onSuccess: () => {
+      toast.success("Your message has successfully been sent");
+      reset();
+      setTimeout(() => {
+        router.replace("/");
+      }, 3000);
+    },
+    onError: () => {
+      toast.error("Something went wrong please try again later");
+    },
+  });
+
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IForm>({
+    resolver: yupResolver(mailSchema),
+  });
+
+  const sendMail = (data: IForm) => {
+    mutate(data);
+  };
+
   return (
     <div className="w-full bg-white">
       {/* Hero */}
@@ -35,16 +72,23 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
               Send us a Message
             </h2>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit(sendMail)}>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
                   Your Name
                 </label>
                 <input
-                  required
                   placeholder="John Doe"
+                  {...register("name")}
                   className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
                 />
+                {errors.name && errors.name.message ? (
+                  <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
+                    {errors.name.message}
+                  </p>
+                ) : (
+                  ""
+                )}
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -52,35 +96,58 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
-                  required
+                  {...register("email")}
                   placeholder="john@example.com"
                   className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
                 />
+                {errors.email && errors.email.message ? (
+                  <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
+                    {errors.email.message}
+                  </p>
+                ) : (
+                  ""
+                )}
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
                   Subject
                 </label>
                 <input
-                  required
                   placeholder="How can we help?"
+                  {...register("subject")}
                   className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
                 />
+                {errors.subject && errors.subject.message ? (
+                  <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
+                    {errors.subject.message}
+                  </p>
+                ) : (
+                  ""
+                )}
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
                   Message
                 </label>
                 <textarea
-                  required
                   placeholder="Tell us more about your inquiry..."
                   rows={5}
+                  {...register("message")}
                   className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
                 />
+                {errors.message && errors.message.message ? (
+                  <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
+                    {errors.message.message}
+                  </p>
+                ) : (
+                  ""
+                )}
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 flex items-center justify-center gap-2 rounded-md py-3 font-semibold text-lg"
+                className={`w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 flex items-center justify-center gap-2 rounded-md py-3 font-semibold text-lg ${
+                  isPending ? "cursor-not-allowed" : "cursor-pointer"
+                }`}
               >
                 <AiOutlineSend className="w-4 h-4 mr-2 font-black text-7xl -rotate-45 ease duration-300 hover:rotate-0" />
                 Send Message
@@ -155,6 +222,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
       {/* Map */}
       <div className="w-full flex justify-center py-8">
         <div className="max-w-[1280px] max-h-125 h-screen w-full aspect-video bg-slate-200 rounded-2xl overflow-hidden">
