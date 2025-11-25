@@ -33,7 +33,6 @@ export default function Downloads() {
     setTimeout(() => {
       const file = data?.files.filter((file: IProps, index: number) => {
         const words = file.title.split(" ");
-
         if (words.includes(text)) {
           return file.title;
         }
