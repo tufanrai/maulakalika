@@ -31,9 +31,14 @@ export default function Downloads() {
 
   useEffect(() => {
     setTimeout(() => {
-      const file = data?.files.filter(
-        (file: IProps, index: number) => file.title == text
-      );
+      const file = data?.files.filter((file: IProps, index: number) => {
+        const words = file.title.split(" ");
+
+        if (words.includes(text)) {
+          return file.title;
+        }
+        return null;
+      });
       setFile(file);
     }, 500);
   }, [text]);
