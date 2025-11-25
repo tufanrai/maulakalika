@@ -89,9 +89,10 @@ export default function Home() {
                   Harnessing Nature's Power for a Sustainable Future
                 </h1>
                 <p className="text-lg text-stone-300 mb-8 leading-relaxed">
-                  Maulika Hydropower Company Ltd. is dedicated to engineering
-                  clean, renewable energy through advanced hydropower solutions,
-                  ensuring a brighter and more sustainable tomorrow for all.
+                  Maulakalika Hydropower Company Ltd. is dedicated to
+                  engineering clean, renewable energy through advanced
+                  hydropower solutions, ensuring a brighter and more sustainable
+                  tomorrow for all.
                 </p>
                 <Link href={"/projects"}>
                   <button className="bg-slate-900 hover:bg-slate-800 text-white rounded-md px-5 py-2 cursor-pointer ease duration-300 hover:scale-105">

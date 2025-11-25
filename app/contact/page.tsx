@@ -1,5 +1,5 @@
 "use client";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import hero from "@/public/It's a deal!.jpg";
 import { AiOutlineSend } from "react-icons/ai";
 import { useForm } from "react-hook-form";

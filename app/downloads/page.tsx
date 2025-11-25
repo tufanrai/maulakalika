@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
-import { Download, FileIcon, Eye, UserRound } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Download, FileIcon } from "lucide-react";
 import documents from "@/public/landscaper business card.jpg";
-import SearchAndFilterCard from "@/components/cards/SearchAndFilterCard";
 import { useQuery } from "@tanstack/react-query";
 import fetchDownloadFiles from "../api/download.api";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   title: string;
@@ -16,14 +16,28 @@ interface IProps {
 }
 
 export default function Downloads() {
+  // user navigation
+  const router = useRouter();
+
+  // fetching data
   const { data, error, isPending, isError, isSuccess } = useQuery({
     queryKey: ["Fetch Downloads"],
     queryFn: fetchDownloadFiles,
   });
 
-  const [view, setView] = React.useState<boolean>(false);
+  // search event handling
+  const [text, setText] = useState<string>("");
+  const [file, setFile] = useState<null | []>(null);
 
-  console.log(data?.files.at(0).url);
+  useEffect(() => {
+    setTimeout(() => {
+      const file = data?.files.filter(
+        (file: IProps, index: number) => file.title == text
+      );
+      setFile(file);
+    }, 500);
+  }, [text]);
+
   return (
     <div className="w-full bg-white">
       {/* Hero */}
@@ -48,54 +62,104 @@ export default function Downloads() {
 
       {/* Search section */}
       <section className="w-full flex items-center justify-center relative pt-12">
-        <SearchAndFilterCard />
+        <div className="max-w-[1100px] w-full rounded-md shadow-lg/30 shadow-stone-400 p-12">
+          <form className="w-full flex items-center justify-center">
+            <input
+              type="search"
+              placeholder="Find document..."
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setText(e.target.value);
+              }}
+              className="px-5 py-1 font-regural text-lg text-stone-600 outline-none border-[1px] border-primary w-full rounded-s-md"
+            />
+            <input
+              type="submit"
+              value="Search"
+              className="bg-primary px-5 py-1 font-medium text-lg border-[1px] border-primary/70 text-neutral-100 rounded-e-md cursor-pointer ease duration-300 hover:bg-primary"
+            />
+          </form>
+        </div>
       </section>
 
       {/* Downloads List */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="space-y-4 overflow-y-auto overflow-x-hidden">
-          {data && data?.files ? (
+        <div className="w-full max-h-[50%] h-screen space-y-4 overflow-y-auto overflow-x-hidden">
+          {file && file.at(0) ? (
             <>
-              {data?.files?.map((file: IProps, index: number) => (
-                <div className="w-full flex flex-col sm:flex-row items-start sm:items-start justify-between p-4 bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition">
+              {file.map((prop: IProps, index: number) => (
+                <div
+                  key={index}
+                  className="max-w-80 w-full flex flex-col items-start justify-cneter p-4 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition cursor-pointer ease duration-300 hover:shadow-slate-300"
+                >
                   {/* File Icon Right */}
-                  <div className="text-gray-700">
+                  <div className="text-gray-700 p-4 rounded-md bg-green-500/50">
                     <FileIcon size={40} />
                   </div>
                   {/* Middle Title + Description */}
-                  <div className="w-100 sm:w-full flex-1 p-2 pb-3 sm:px-6 text-start sm:text-left mt-3 sm:mt-0">
+                  <div className="max-w-100 w-full flex flex-col items-start justify-center p-2 pb-3 mt-3 sm:mt-0">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      {file.title}
+                      {prop.title}
                     </h3>
                     <p className="text-sm text-gray-500 mt-1">
-                      {file.description}
+                      {prop.description}
                     </p>
                   </div>
 
                   {/* Left Controls */}
                   <div className="max-w-160 flex flex-row sm:flex-col items-center justify-around gap-2">
-                    <button className="max-w-80 w-full flex items-center justify-center gap-1 px-3 py-1 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700">
+                    <button
+                      onClick={() => {
+                        router.replace(`${prop.url}`);
+                      }}
+                      className="max-w-80 w-full flex items-center justify-center gap-1 px-3 py-2 cursor-pointer bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700"
+                    >
                       <Download size={16} /> Download
                     </button>
-
-                    <button className="max-w-80 w-full flex items-center justify-center gap-1 px-3 py-1 bg-green-600 text-white rounded-md text-sm hover:bg-green-700">
-                      <Eye size={16} /> View
-                    </button>
-                  </div>
-                  {/* iframe */}
-                  <div className="w-full h-screen bg-black/20 absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] flex items-center jusitfy-center">
-                    <iframe
-                      src={`${file.url}`}
-                      width={"900"}
-                      height={"860"}
-                      className="max-w-[900px] max-h-[860px] w-full h-screen rounded-lg"
-                    ></iframe>
                   </div>
                 </div>
               ))}
             </>
           ) : (
-            <></>
+            <>
+              {data && data?.files ? (
+                <>
+                  {data?.files?.map((file: IProps, index: number) => (
+                    <div
+                      key={index}
+                      className="max-w-80 w-full flex flex-col items-start justify-cneter p-4 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition cursor-pointer ease duration-300 hover:shadow-slate-300"
+                    >
+                      {/* File Icon Right */}
+                      <div className="text-gray-700 p-4 rounded-md bg-green-500/50">
+                        <FileIcon size={40} />
+                      </div>
+                      {/* Middle Title + Description */}
+                      <div className="max-w-100 w-full flex flex-col items-start justify-center p-2 pb-3 mt-3 sm:mt-0">
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {file.title}
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-1">
+                          {file.description}
+                        </p>
+                      </div>
+
+                      {/* Left Controls */}
+                      <div className="max-w-160 flex flex-row sm:flex-col items-center justify-around gap-2">
+                        <button
+                          onClick={() => {
+                            router.replace(`${file.url}`);
+                          }}
+                          className="max-w-80 w-full flex items-center justify-center gap-1 px-3 py-2 cursor-pointer bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700"
+                        >
+                          <Download size={16} /> Download
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <></>
+              )}
+            </>
           )}
         </div>
       </section>

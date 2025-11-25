@@ -5,3 +5,8 @@ export interface IForm {
   subject: string;
   message: string;
 }
+
+// search interface
+export interface ISearch {
+  name?: string;
+}
