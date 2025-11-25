@@ -231,7 +231,7 @@ export default function Home() {
           </div>
           <div className="w-full flex items-center justify-center pt-20 pb-10">
             <Link href={"/news"}>
-              <button className="px-5 py-2 rounded-md font-medium text-md bg-primary cursor-pointer ease duration-300 hover:shadow-lg/30 hover:shadow-primary hover:scale-105">
+              <button className="px-5 py-2 rounded-md font-medium text-md bg-primary cursor-pointer ease duration-300 hover:shadow-lg/30 hover:shadow-primary hover:scale-105 text-slate-50">
                 See more
               </button>
             </Link>

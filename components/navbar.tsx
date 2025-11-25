@@ -89,7 +89,7 @@ const Navbar = () => {
                   <>
                     <span
                       onClick={() => setMenu(!Menu)}
-                      className="font-black text-3xl cursor-pointer p-4"
+                      className="font-black text-3xl text-slate-100 cursor-pointer p-4"
                     >
                       <RxDropdownMenu className="-rotate-180" />
                     </span>
@@ -98,7 +98,7 @@ const Navbar = () => {
                   <>
                     <span
                       onClick={() => setMenu(!Menu)}
-                      className="font-black text-3xl cursor-pointer p-4"
+                      className="font-black text-3xl text-slate-100 cursor-pointer p-4"
                     >
                       <RxDropdownMenu />
                     </span>
@@ -106,46 +106,57 @@ const Navbar = () => {
                 )}
                 {Menu ? (
                   <nav className="max-w-[280px] w-full">
-                    <ul className="w-full flex flex-col items-start justify-start py-4">
+                    <ul className="w-full flex flex-col items-start justify-start py-4 text-white">
                       <Link
-                        className="w-full ease duration-300 hover:bg-third"
+                        onClick={() => setMenu(!Menu)}
+                        className="w-full ease duration-300 text-slate-300 hover:text-slate-50"
                         href={"/"}
                       >
                         <li className="mx-2 w-full px-5 py-2">Home</li>
                       </Link>
                       <Link
-                        className="w-full ease duration-300 hover:bg-third"
+                        onClick={() => setMenu(!Menu)}
+                        className="w-full ease duration-300 text-slate-300 hover:text-slate-50"
                         href={"/about"}
                       >
                         <li className="mx-2 w-full px-5 py-2">About us</li>
                       </Link>
                       <Link
-                        className="w-full ease duration-300 hover:bg-third"
+                        onClick={() => setMenu(!Menu)}
+                        className="w-full ease duration-300 text-slate-300 hover:text-slate-50"
                         href={"/news"}
                       >
                         <li className="mx-2 w-full px-5 py-2">News&Events</li>
                       </Link>
                       <Link
-                        className="w-full ease duration-300 hover:bg-third"
+                        onClick={() => setMenu(!Menu)}
+                        className="w-full ease duration-300 text-slate-300 hover:text-slate-50"
                         href={"/projects"}
                       >
                         <li className="mx-2 w-full px-5 py-2">Projects</li>
                       </Link>
                       <Link
-                        className="w-full ease duration-300 hover:bg-third"
+                        onClick={() => setMenu(!Menu)}
+                        className="w-full ease duration-300 text-slate-300 hover:text-slate-50"
                         href={"/downloads"}
                       >
                         <li className="mx-2 w-full px-5 py-2">Downloads</li>
                       </Link>
                       <Link
-                        className="w-full ease duration-300 hover:bg-third"
+                        onClick={() => setMenu(!Menu)}
+                        className="w-full ease duration-300 text-slate-300 hover:text-slate-50"
                         href={"/gallery"}
                       >
-                        <li className="mr-auto w-full px-5 py-2">Gallery</li>
+                        <li className="mr-auto w-full px-5 py-2 mx-auto">
+                          Gallery
+                        </li>
                       </Link>
                       <Link className="w-full" href={"/contact"}>
                         <li>
-                          <button className="w-full px-5 py-2 rounded-md font-regural text-md text-black bg-stone-100 ease duration-300 hover:bg-stone-300 shadow-stone-100 shadow-lg/20 cursor-pointer">
+                          <button
+                            onClick={() => setMenu(!Menu)}
+                            className="w-full px-5 py-2 rounded-md font-regural text-md text-black bg-stone-100 ease duration-300 hover:bg-stone-300 shadow-stone-100 shadow-lg/20 cursor-pointer"
+                          >
                             Contact us
                           </button>
                         </li>
