@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { FaFilePdf } from "react-icons/fa";
 import Link from "next/link";
 import { IoMdSearch } from "react-icons/io";
+import fetchNewsContent from "@/app/api/news.api";
 
 interface IProps {
   title: string;
@@ -16,8 +17,8 @@ interface IProps {
 const NewsAndEvents = () => {
   // fetching data
   const { data, error, isPending, isError, isSuccess } = useQuery({
-    queryKey: ["Fetch Downloads"],
-    queryFn: fetchDownloadFiles,
+    queryKey: ["Fetch News and events"],
+    queryFn: fetchNewsContent,
   });
 
   // search event handling
@@ -60,7 +61,7 @@ const NewsAndEvents = () => {
       </form>
       {/* Downloads */}
       <ul className="w-full flex flex-col items-start justify-start gap-1 py-2">
-        {data && data.files ? (
+        {data && data.files.at(0) ? (
           <>
             {file && file.at(0) ? (
               <>
@@ -109,7 +110,12 @@ const NewsAndEvents = () => {
             )}
           </>
         ) : (
-          <></>
+          <div className="w-full flex flex-col items-center justify-center gap-2 md:pt-4">
+            <h6 className="font-black text-lg italic text-slate-400">404</h6>
+            <p className="font-regural text-sm italic text-slate-400">
+              Nothing to be displayed!
+            </p>
+          </div>
         )}
       </ul>
     </div>

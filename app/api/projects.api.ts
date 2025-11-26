@@ -1,12 +1,12 @@
 import axiosInstance from "./axios.instance";
 
-const fetchNewsContent = async () => {
+const fetchDownloadFiles = async () => {
   try {
-    const response = await axiosInstance.get("/events");
+    const response = await axiosInstance.get("/projects");
     return response.data;
   } catch (err: any) {
     return err.message;
   }
 };
 
-export default fetchNewsContent;
+export default fetchDownloadFiles;
