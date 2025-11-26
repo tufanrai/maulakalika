@@ -61,7 +61,7 @@ const NewsAndEvents = () => {
       </form>
       {/* Downloads */}
       <ul className="w-full flex flex-col items-start justify-start gap-1 py-2">
-        {data && data.files.at(0) ? (
+        {data && data?.files?.at(0) ? (
           <>
             {file && file.at(0) ? (
               <>

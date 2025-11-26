@@ -18,7 +18,7 @@ const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
           {children}
         </div>
         {/* News and downloads */}
-        <div className="w-full md:col-span-1 flex flex-col items-start justify-center gap-4 h-[90vh] bg-slate-100">
+        <div className="w-full md:col-span-1 flex flex-col items-start justify-start md:py-27 gap-4 h-[90vh] bg-slate-100">
           {/* News and Events */}
           <div className="w-full px-5 flex flex-col items-start justify-start gap-4">
             <DownloadSection />
