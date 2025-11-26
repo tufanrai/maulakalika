@@ -7,8 +7,8 @@ import Link from "next/link";
 const FooterBar = () => {
   return (
     <div className="w-full bg-primary px-5 md:px-8 py-4 flex flex-col items-center justify-center">
-      <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-start md:items-center justify-around gap-4 px-5">
-        <div className="w-1/2 flex flex-col items-start justify-start gap-1 p-5">
+      <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-start md:items-start justify-around gap-10 md:gap-4 md:py-10 px-5">
+        <div className="w-1/2 flex flex-col items-start justify-start gap-1">
           <Link href={"/"}>
             <div
               style={{
@@ -20,7 +20,7 @@ const FooterBar = () => {
               className="w-[55px] h-[55px] rounded-full"
             ></div>
           </Link>
-          <p className="w-[204px] font-medium text-md text-slate-300 mt-4">
+          <p className="w-[204px] font-regural text-md text-slate-300 mt-4">
             123 Hydroelectric Road, Aqua City, Waterfalls 98765
           </p>
           <div className="flex items-center justify-center gap-2 mt-1">
@@ -52,33 +52,33 @@ const FooterBar = () => {
             <li>
               <Link
                 className="ease duration-300 text-slate-300 hover:text-slate-50"
-                href="#"
+                href="/"
               >
-                Privacy Policy
+                Home
               </Link>
             </li>
             <li>
               <Link
                 className="ease duration-300 text-slate-300 hover:text-slate-50"
-                href="#"
+                href="/about"
               >
-                Terms of Service
+                About us
               </Link>
             </li>
             <li>
               <Link
                 className="ease duration-300 text-slate-300 hover:text-slate-50"
-                href="#"
+                href="/"
               >
-                Careers
+                News and Events
               </Link>
             </li>
             <li>
               <Link
                 className="ease duration-300 text-slate-300 hover:text-slate-50"
-                href="#"
+                href="/contact"
               >
-                FAQ
+                Contact
               </Link>
             </li>
           </ul>
@@ -96,7 +96,7 @@ const FooterBar = () => {
         </div>
       </div>
       <hr className="max-w-[1280px] w-full h-1 mt-5 text-slate-300" />
-      <span className="font-thin text-sm text-slate-300 mt-4">
+      <span className="font-regural text-sm text-slate-300 mt-4">
         © 2025 Maulika Hydropower Company Ltd. All rights reserved
       </span>
     </div>

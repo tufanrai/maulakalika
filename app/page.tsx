@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   ArrowRight,
@@ -10,6 +11,7 @@ import {
 import Link from "next/link";
 import hero from "@/public/Hydro electric power plant stock image_ Image of powerplant - 19361119.jpg";
 import Project_news_card from "@/components/cards/project_news_card";
+import HorizontalTimeline from "@/components/cards/TimelineCard";
 
 export default function Home() {
   const stats = [
@@ -189,29 +191,7 @@ export default function Home() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-slate-200 hidden md:block"></div>
-
-          <div className="grid md:grid-cols-4 gap-8 relative">
-            {legacyProjects.map((project, index) => (
-              <div key={index} className="relative">
-                {/* Timeline Dot */}
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 -top-3 w-6 h-6 bg-slate-900 rounded-full border-4 border-white z-10"></div>
-
-                <div
-                  className={`bg-slate-50 rounded-xl p-6 border border-slate-200 ${
-                    index % 2 === 0 ? "md:mt-20" : "md:mb-20"
-                  }`}
-                >
-                  <div className="inline-block bg-slate-900 text-white text-sm font-bold px-3 py-1 rounded-lg mb-3">
-                    {project.year}
-                  </div>
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    {project.title}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <HorizontalTimeline />
         </div>
       </section>
 

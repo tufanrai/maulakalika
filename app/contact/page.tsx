@@ -65,7 +65,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
@@ -80,7 +80,7 @@ export default function Contact() {
                 <input
                   placeholder="John Doe"
                   {...register("name")}
-                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-sm border-[1px] border-stone-300"
                 />
                 {errors.name && errors.name.message ? (
                   <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
@@ -98,7 +98,7 @@ export default function Contact() {
                   type="email"
                   {...register("email")}
                   placeholder="john@example.com"
-                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-sm border-[1px] border-stone-300"
                 />
                 {errors.email && errors.email.message ? (
                   <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
@@ -115,7 +115,7 @@ export default function Contact() {
                 <input
                   placeholder="How can we help?"
                   {...register("subject")}
-                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-sm border-[1px] border-stone-300"
                 />
                 {errors.subject && errors.subject.message ? (
                   <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
@@ -133,7 +133,7 @@ export default function Contact() {
                   placeholder="Tell us more about your inquiry..."
                   rows={5}
                   {...register("message")}
-                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-md border-[1px] border-stone-300"
+                  className="bg-white outline-none px-5 py-1 font-regural text-md text-stone-800 w-full rounded-sm border-[1px] border-stone-300"
                 />
                 {errors.message && errors.message.message ? (
                   <p className="font-thin text-xs text-red-500 px-5 py-1 w-full text-end">
@@ -145,11 +145,11 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className={`w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 flex items-center justify-center gap-2 rounded-md py-3 font-semibold text-lg ${
+                className={`w-full bg-primary ease duration-300 cursor-pointer hover:bg-primary/88 flex items-center justify-center gap-2 rounded-xs py-3 font-semibold text-lg text-slate-50 ${
                   isPending ? "cursor-not-allowed" : "cursor-pointer"
                 }`}
               >
-                <AiOutlineSend className="w-4 h-4 mr-2 font-black text-7xl -rotate-45 ease duration-300 hover:rotate-0" />
+                <AiOutlineSend className="w-4 h-4 mr-2 font-black text-7xl -rotate-45" />
                 Send Message
               </button>
             </form>
@@ -163,14 +163,14 @@ export default function Contact() {
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">
                       Address
                     </h3>
-                    <p className="text-slate-600">
+                    <p className="text-slate-600 text-sm">
                       123 Hydroelectric Road
                       <br />
                       Aqua City, Waterfalls 98765
@@ -179,42 +179,43 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Phone</h3>
-                    <p className="text-slate-600">+1 (650) 123-4567</p>
-                    <p className="text-slate-600">+977 (98) 60000000</p>
+                    <p className="text-slate-600 text-sm">+1 (650) 123-4567</p>
+                    <p className="text-slate-600 text-sm">+977 (98) 60000000</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
-                    <p className="text-slate-600">info@maulikahydropower.com</p>
-                    <p className="text-slate-600">support@maulikahydro.com</p>
+                    <p className="text-slate-600 text-sm">
+                      info@maulikahydropower.com
+                    </p>
+                    <p className="text-slate-600 text-sm">
+                      support@maulikahydro.com
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">
                       Business Hours
                     </h3>
-                    <p className="text-slate-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM
+                    <p className="text-slate-600 text-sm">
+                      Sunday - Friday: 9:00 AM - 6:00 PM
                     </p>
-                    <p className="text-slate-600">
-                      Saturday: 10:00 AM - 4:00 PM
-                    </p>
-                    <p className="text-slate-600">Sunday: Closed</p>
+                    <p className="text-slate-600 text-sm">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
@@ -224,8 +225,8 @@ export default function Contact() {
       </section>
 
       {/* Map */}
-      <div className="w-full flex justify-center py-8">
-        <div className="max-w-[1280px] max-h-125 h-screen w-full aspect-video bg-slate-200 rounded-2xl overflow-hidden">
+      <div className="w-full flex justify-center py-8 px-5">
+        <div className="max-w-[1180px] max-h-125 h-screen w-full aspect-video bg-slate-200 rounded-md overflow-hidden border border-slate-300">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56506.53295636403!2d85.25438924863278!3d27.727834300000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1915950f9d31%3A0xaf075cc9ad4db59c!2sKalika%20Construction!5e0!3m2!1sen!2snp!4v1763381512376!5m2!1sen!2snp"
             width="600"

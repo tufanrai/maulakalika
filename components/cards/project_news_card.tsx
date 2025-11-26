@@ -19,7 +19,7 @@ const defaultValues: IProps = {
 const Project_news_card = ({ image, title, description }: IProps) => {
   let upload = image ?? defaultValues.image;
   return (
-    <div className="md:max-w-[276px] md:max-h-[386px] w-full sm:h-screen rounded-md shadow-lg/30 shadow-stone-400 p-2 flex flex-row sm:flex-col items-center justify-start gap-1 cursor-pointer ease duration-300 hover:shadow-primary">
+    <div className="md:max-w-[220px] md:max-h-[286px] w-full sm:h-screen bg-white rounded-md shadow-lg/30 shadow-stone-400 p-2 flex flex-row sm:flex-col items-center justify-start gap-1 cursor-pointer ease duration-300 hover:shadow-primary">
       <div
         style={{
           backgroundImage: `url("${upload}")`,
@@ -27,13 +27,13 @@ const Project_news_card = ({ image, title, description }: IProps) => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="sm:max-w-[250px] md:max-h-[156px] sm:w-full w-1/2 md:h-screen h-3/4 rounded-sm bg-stone-300"
+        className="sm:max-w-[215px] md:max-h-[166px] sm:w-full w-1/2 md:h-screen h-3/4 rounded-sm bg-stone-300"
       ></div>
       <div className="w-2/3 sm:w-full">
-        <h6 className="w-full px-2 py-1 text-start mx-2 font-semibold text-lg/6 text-black">
+        <h6 className="w-full overflow-hidden py-1 text-start mx-2 font-semibold text-md/6 text-black">
           {title ?? defaultValues.title}
         </h6>
-        <p className="max-w-[250px] max-h-[140px] w-full h-screen overflow-hidden font-regural text-sm/5 px-2 text-stone-400/70">
+        <p className="max-w-[250px] max-h-[85px] w-full h-screen overflow-hidden font-regural text-sm/5 px-2 text-slate-700/70">
           {description ?? defaultValues.description}
         </p>
       </div>

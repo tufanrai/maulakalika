@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-full h-screen flex flex-col items-center justify-start bg-white">
+        <div className="w-full flex flex-col items-center justify-start bg-white">
           <Toaster position="top-right" reverseOrder={false} />
           <Navbar />
           <QueryProvider>{children}</QueryProvider>
