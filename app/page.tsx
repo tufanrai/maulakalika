@@ -83,7 +83,7 @@ export default function Home() {
         }}
         className="relative overflow-hidden"
       >
-        <div className="w-full bg-linear-60 from-black/70 to-white/0">
+        <div className="w-full bg-linear-60 from-black/80 to-white/0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="ml-12">
@@ -97,7 +97,7 @@ export default function Home() {
                   tomorrow for all.
                 </p>
                 <Link href={"/projects"}>
-                  <button className="bg-slate-900 hover:bg-slate-800 text-white rounded-md px-5 py-2 cursor-pointer ease duration-300 hover:scale-105">
+                  <button className="bg-slate-900 hover:bg-slate-800 text-white rounded-xs border border-white px-5 py-2 cursor-pointer ease duration-300 hover:scale-105">
                     Explore Our Projects
                   </button>
                 </Link>
@@ -129,7 +129,7 @@ export default function Home() {
               and uncompromised stewardship.
             </p>
             <Link href={"/about"}>
-              <button className="mt-4 bg-slate-900 hover:bg-slate-800 text-white rounded-md px-5 py-2 cursor-pointer ease duration-300 hover:scale-105">
+              <button className="mt-4 bg-slate-900 hover:bg-slate-800 text-white rounded-xs px-5 py-2 cursor-pointer ease duration-300 hover:scale-105">
                 Learn more
               </button>
             </Link>
@@ -200,18 +200,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Latest News & Updates
+              Latest Projects
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex items-center justify-center gap-8">
             <Project_news_card />
             <Project_news_card />
             <Project_news_card />
           </div>
           <div className="w-full flex items-center justify-center pt-20 pb-10">
             <Link href={"/news"}>
-              <button className="px-5 py-2 rounded-md font-medium text-md bg-primary cursor-pointer ease duration-300 hover:shadow-lg/30 hover:shadow-primary hover:scale-105 text-slate-50">
+              <button className="px-5 py-2 rounded-xs font-medium text-md bg-primary cursor-pointer ease duration-300 hover:shadow-lg/30 hover:shadow-primary hover:scale-105 text-slate-50">
                 See more
               </button>
             </Link>

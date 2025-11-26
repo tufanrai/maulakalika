@@ -84,7 +84,7 @@ const HorizontalTimeline: React.FC = () => {
       <div className="relative">
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
           aria-label="Scroll left"
         >
           <FiChevronLeft className="w-6 h-6 text-gray-600" />
@@ -105,7 +105,7 @@ const HorizontalTimeline: React.FC = () => {
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
                     index === activeIndex
-                      ? "bg-blue-500 shadow-lg scale-110"
+                      ? "bg-primary shadow-lg scale-110"
                       : "bg-gray-200 hover:bg-gray-300"
                   }`}
                   onClick={() => setActiveIndex(index)}
@@ -125,7 +125,7 @@ const HorizontalTimeline: React.FC = () => {
                 {index < timelineData.length - 1 && (
                   <div
                     className={`absolute w-[calc(100%+3rem)] h-0.5 top-4 left-8 ${
-                      index < activeIndex ? "bg-blue-500" : "bg-gray-200"
+                      index < activeIndex ? "bg-primary" : "bg-gray-200"
                     }`}
                   />
                 )}
@@ -137,7 +137,7 @@ const HorizontalTimeline: React.FC = () => {
                 >
                   <p
                     className={`font-semibold mb-1 ${
-                      index === activeIndex ? "text-blue-500" : "text-gray-600"
+                      index === activeIndex ? "text-primary" : "text-gray-600"
                     }`}
                   >
                     {item.date}

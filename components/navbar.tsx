@@ -43,9 +43,6 @@ const Navbar = () => {
                 <Link href={"/about"}>About us</Link>
               </li>
               <li className="mx-2">
-                <Link href={"/news"}>News&Events</Link>
-              </li>
-              <li className="mx-2">
                 <Link href={"/projects"}>Projects</Link>
               </li>
               <li className="">
@@ -102,13 +99,6 @@ const Navbar = () => {
                         href={"/about"}
                       >
                         <li className="mx-2 w-full px-5 py-2">About us</li>
-                      </Link>
-                      <Link
-                        onClick={() => setMenu(!Menu)}
-                        className="w-full ease duration-300 text-slate-300 hover:text-slate-50"
-                        href={"/news"}
-                      >
-                        <li className="mx-2 w-full px-5 py-2">News&Events</li>
                       </Link>
                       <Link
                         onClick={() => setMenu(!Menu)}

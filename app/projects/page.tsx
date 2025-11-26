@@ -1,89 +1,46 @@
 import React from "react";
-import events from "@/public/Networking Event Interaction.jpg";
 import Project_news_card from "@/components/cards/project_news_card";
-import SearchAndFilterCard from "@/components/cards/SearchAndFilterCard";
+import { FaFilePdf } from "react-icons/fa";
+import { IoMdSearch } from "react-icons/io";
+import DownloadSection from "@/components/Downloads";
+import NewsAndEvents from "@/components/NewsAndEvents";
+import Link from "next/link";
 
-export default function News() {
+const page = () => {
   return (
-    <div className="w-full bg-white">
-      {/* Hero */}
-      <section
-        style={{
-          backgroundImage: `url("${events.src}")`,
-          backgroundPosition: "top",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-        className=" text-white w-full"
-      >
-        <div className="w-full bg-black/40 flex items-center justify-center py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Latest Projects
-            </h1>
-            <p className="text-xl text-slate-300 max-w-2xl">
-              Stay updated with our latest projects, achievements, and
-              announcements
-            </p>
+    <div className="md:col-span-3 bg-slate-200 h-[90vh] p-12">
+      <div className="w-full flex flex-col items-start justify-start gap-4">
+        {/* search section */}
+        <section className="w-full flex items-start justify-center">
+          <div className="max-w-[1100px] w-full rounded-md p-12">
+            <form className="w-full flex items-center justify-center">
+              <input
+                type="search"
+                placeholder="Find document..."
+                //   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                //     setText(e.target.value);
+                //   }}
+                className="px-5 py-1 font-regural text-lg text-stone-600 outline-none border-[1px] border-primary w-full rounded-s-md"
+              />
+              <button
+                type="submit"
+                className="bg-primary px-5 py-[7px] font-medium text-xl border-2 border-primary/70 text-neutral-100 rounded-e-md cursor-pointer ease duration-300 hover:bg-primary flex items-center justify-center gap-2"
+              >
+                <IoMdSearch />
+              </button>
+            </form>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Search section */}
-      <section className="w-full flex items-center justify-center relative pt-12">
-        <SearchAndFilterCard />
-      </section>
-
-      {/* News Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Project_news_card
-            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
-            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
-urjasanchar.com
-+2
-urjakhabar.com
-+2
- The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
-          />
-          <Project_news_card
-            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
-            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
-urjasanchar.com
-+2
-urjakhabar.com
-+2
- The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
-          />
-          <Project_news_card
-            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
-            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
-urjasanchar.com
-+2
-urjakhabar.com
-+2
- The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
-          />
-          <Project_news_card
-            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
-            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
-urjasanchar.com
-+2
-urjakhabar.com
-+2
- The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
-          />
-          <Project_news_card
-            title="Maulakalika Hydropower Company — A Singular Project Focused on Kalika Kaligandaki"
-            description={`Maulakalika Hydropower Company Ltd has developed one major hydropower project so far: the 38.17 MW (later reported as ~47.7 MW) Kalika‑Kaligandaki Hydroelectric Project on the Kali Gandaki River. 
-urjasanchar.com
-+2
-urjakhabar.com
-+2
- The company has completed its feasibility study, applied for environmental clearance, and secured investment from multiple banks.`}
-          />
-        </div>
-      </section>
+        {/* projects section */}
+        <section className="w-full h-screen flex flex-wrap  gap-1 items-start justify-start overflow-x-hidden overflow-y-auto px-5 md:px-0">
+          <Link href={"/projects/0"}>
+            <Project_news_card />
+          </Link>
+        </section>
+      </div>
     </div>
   );
-}
+};
+
+export default page;
