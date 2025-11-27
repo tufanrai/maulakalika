@@ -11,23 +11,25 @@ const Navbar = () => {
     <div className="w-full">
       <header className="w-full flex flex-col items-center justify-center">
         {/* sub nav */}
-        <div className="max-w-[1280px] w-full px-5 md:px-8 flex items-center justify-end gap-4 bg-slate-50 py-2">
-          <div
-            style={{
-              backgroundImage: `url("${logo.src}")`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            className="w-[45px] h-[45px] rounded-full mr-auto"
-          ></div>
-          <div className="max-w-80 md:max-w-100 w-full flex flex-col md:flex-row items-end justify-center gap-1">
-            <span className="flex items-center justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-black hover:text-primary">
-              <CiMail className="font-black text-2xl" /> info@example.com
-            </span>
-            <span className="flex items-center justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-black hover:text-primary">
-              <CiPhone className="font-black text-2xl" /> +977 - (98)00000000
-            </span>
+        <div className=" w-full px-5 md:px-8 flex items-center justify-center gap-4 py-2">
+          <div className="max-w-[1280px] w-full px-5 md:px-8 flex items-center justify-end gap-4 py-2">
+            <div
+              style={{
+                backgroundImage: `url("${logo.src}")`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              className="w-[45px] h-[45px] rounded-full mr-auto"
+            ></div>
+            <div className="max-w-80 md:max-w-100 w-full flex flex-col md:flex-row items-end justify-center gap-1">
+              <span className="flex items-center justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-black hover:text-primary">
+                <CiMail className="font-black text-2xl" /> info@example.com
+              </span>
+              <span className="flex items-center justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-black hover:text-primary">
+                <CiPhone className="font-black text-2xl" /> +977 - (98)00000000
+              </span>
+            </div>
           </div>
         </div>
         {/* main nav */}

@@ -14,11 +14,11 @@ const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <div className="w-full flex justify-center">
       <div className="max-w-[1280px] w-full grid md:grid-cols-4 flex flex-col">
-        <div className="md:col-span-3 bg-slate-200 h-[90vh] overflow-x-hidden overflow-y-auto md:p-12">
+        <div className="md:col-span-3 bg-white h-[90vh] overflow-x-hidden overflow-y-auto md:p-12">
           {children}
         </div>
         {/* News and downloads */}
-        <div className="w-full md:col-span-1 flex flex-col items-start justify-start md:py-27 gap-4 h-[90vh] bg-slate-100">
+        <div className="w-full md:col-span-1 flex flex-col items-start justify-start md:py-27 gap-4 h-[90vh] bg-slate-50">
           {/* News and Events */}
           <div className="w-full px-5 flex flex-col items-start justify-start gap-4">
             <DownloadSection />

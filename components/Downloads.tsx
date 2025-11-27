@@ -11,6 +11,7 @@ interface IProps {
   description: string;
   createdAt: string;
   url: string;
+  type: string;
 }
 
 const DownloadSection = () => {
@@ -20,13 +21,17 @@ const DownloadSection = () => {
     queryFn: fetchDownloadFiles,
   });
 
+  const filteredData = data?.files?.filter(
+    (file: IProps, index: number) => file.type == "Downloads"
+  );
+
   // search event handling
   const [text, setText] = useState<string>("");
   const [file, setFile] = useState<null | []>(null);
 
   useEffect(() => {
     setTimeout(() => {
-      const file = data?.files.filter((file: IProps, index: number) => {
+      const file = filteredData?.filter((file: IProps, index: number) => {
         const words = file?.title?.split(" ");
         if (words?.includes(text)) {
           return file.title;
@@ -86,7 +91,7 @@ const DownloadSection = () => {
               </>
             ) : (
               <>
-                {data.files.map((file: IProps, index: number) => (
+                {filteredData.map((file: IProps, index: number) => (
                   <li key={index} className="w-full">
                     <Link className="w-full" href={file.url}>
                       <div className="max-w-80 w-full rounded-md px-2 py-2 flex items-start justify-start gap-1 bg-slate-200 cursor-pointer ease duration-300 hover:shadow hover:shadow-lg/30 overflow-hidden">

@@ -11,6 +11,7 @@ interface IProps {
   title: string;
   description: string;
   url: string;
+  type: string;
 }
 
 const page = () => {
@@ -20,13 +21,17 @@ const page = () => {
     queryFn: fetchDownloadFiles,
   });
 
+  const filteredData = data?.files?.filter(
+    (file: IProps, index: number) => file.type == "Projects"
+  );
+
   // search event handling
   const [text, setText] = useState<string>("");
   const [file, setFile] = useState<null | []>(null);
 
   useEffect(() => {
     setTimeout(() => {
-      const file = data?.files.filter((file: IProps, index: number) => {
+      const file = filteredData?.filter((file: IProps, index: number) => {
         const words = file?.title?.split(" ");
         if (words?.includes(text)) {
           return file.title;
@@ -38,7 +43,7 @@ const page = () => {
   }, [text]);
 
   return (
-    <div className="md:col-span-3 bg-slate-200 h-[90vh] p-12">
+    <div className="md:col-span-3 h-[90vh] p-12">
       <div className="w-full flex flex-col items-start justify-start gap-4">
         {/* search section */}
         <section className="w-full flex items-start justify-center">
@@ -64,7 +69,7 @@ const page = () => {
 
         {/* projects section */}
         <section className="w-full h-screen flex flex-wrap  gap-1 items-start justify-start overflow-x-hidden overflow-y-auto px-5 md:px-0">
-          {data && data?.files?.at(0) ? (
+          {filteredData && filteredData.at(0) ? (
             <>
               {file && file?.at(0) ? (
                 <>
@@ -100,9 +105,6 @@ const page = () => {
               </p>
             </div>
           )}
-          {/* <Link href={"/projects/0"}>
-            <Project_news_card />
-          </Link> */}
         </section>
       </div>
     </div>
