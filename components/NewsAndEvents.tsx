@@ -13,6 +13,7 @@ interface IProps {
   createdAt: string;
   url: string;
   type: string;
+  _id: string;
 }
 
 const NewsAndEvents = () => {
@@ -74,7 +75,13 @@ const NewsAndEvents = () => {
               <>
                 {file.map((value: IProps, index: number) => (
                   <li key={index} className="w-full">
-                    <Link className="w-full" href={value.url}>
+                    <Link
+                      className="w-full"
+                      onClick={() => {
+                        sessionStorage.setItem("file_url", value._id);
+                      }}
+                      href={`projects/${value._id}`}
+                    >
                       <div className="max-w-80 w-full rounded-md px-2 py-2 flex items-start justify-start gap-1 bg-slate-200 cursor-pointer ease duration-300 hover:shadow hover:shadow-lg/30 overflow-hidden">
                         <div className="w-10 h-10 rounded-sm flex items-center justify-center font-bold text-xl text-red-500">
                           <FaFilePdf />
@@ -96,7 +103,13 @@ const NewsAndEvents = () => {
               <>
                 {filteredData.map((file: IProps, index: number) => (
                   <li key={index} className="w-full">
-                    <Link className="w-full" href={file.url}>
+                    <Link
+                      className="w-full"
+                      onClick={() => {
+                        sessionStorage.setItem("file_url", file._id);
+                      }}
+                      href={`projects/${file._id}`}
+                    >
                       <div className="max-w-80 w-full rounded-md px-2 py-2 flex items-start justify-start gap-1 bg-slate-200 cursor-pointer ease duration-300 hover:shadow hover:shadow-lg/30 overflow-hidden">
                         <div className="w-10 h-10 rounded-sm flex items-center justify-center font-bold text-xl text-red-500">
                           <FaFilePdf />

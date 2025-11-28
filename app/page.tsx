@@ -12,6 +12,7 @@ import Link from "next/link";
 import hero from "@/public/Hydro electric power plant stock image_ Image of powerplant - 19361119.jpg";
 import Project_news_card from "@/components/cards/project_news_card";
 import HorizontalTimeline from "@/components/cards/TimelineCard";
+import ProjectsContents from "@/components/Contents/projects.contents";
 
 export default function Home() {
   const stats = [
@@ -87,7 +88,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="ml-12">
-                <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 leading-tight motion-preset-focus ">
                   Harnessing Nature's Power for a Sustainable Future
                 </h1>
                 <p className="text-lg text-stone-300 mb-8 leading-relaxed">
@@ -205,12 +206,10 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-center gap-8">
-            <Project_news_card />
-            <Project_news_card />
-            <Project_news_card />
+            <ProjectsContents />
           </div>
           <div className="w-full flex items-center justify-center pt-20 pb-10">
-            <Link href={"/news"}>
+            <Link href={"/projects"}>
               <button className="px-5 py-2 rounded-xs font-medium text-md bg-primary cursor-pointer ease duration-300 hover:shadow-lg/30 hover:shadow-primary hover:scale-105 text-slate-50">
                 See more
               </button>

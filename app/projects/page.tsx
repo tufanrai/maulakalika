@@ -5,16 +5,19 @@ import { IoMdSearch } from "react-icons/io";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import fetchDownloadFiles from "../api/projects.api";
-import upload from "../../../maulakalika server/src/middleware/upload.middleware";
+import { useRouter } from "next/navigation";
+import { fetchSpecificFile } from "../api/download.api";
 
 interface IProps {
   title: string;
   description: string;
   url: string;
   type: string;
+  _id: string;
 }
 
 const page = () => {
+  const router = useRouter();
   // Data fetching
   const { data } = useQuery({
     queryKey: ["fetch project"],
@@ -74,25 +77,39 @@ const page = () => {
               {file && file?.at(0) ? (
                 <>
                   {file?.map((data: IProps, index: number) => (
-                    <>
+                    <Link
+                      key={index}
+                      onClick={() => {
+                        router.prefetch(`/projects/${data._id}`);
+                        sessionStorage.setItem("file_url", data._id);
+                      }}
+                      href={`/projects/${data._id}`}
+                    >
                       <Project_news_card
-                        key={index}
                         title={data.title}
                         description={data.description}
                         image={data.url}
                       />
-                    </>
+                    </Link>
                   ))}
                 </>
               ) : (
                 <>
                   {data?.files.map((value: IProps, index: number) => (
-                    <Project_news_card
+                    <Link
                       key={index}
-                      title={value.title}
-                      description={value.description}
-                      image={value.url}
-                    />
+                      onClick={() => {
+                        router.prefetch(`/projects/${value._id}`);
+                        sessionStorage.setItem("file_url", value._id);
+                      }}
+                      href={`/projects/${value._id}`}
+                    >
+                      <Project_news_card
+                        title={value.title}
+                        description={value.description}
+                        image={value.url}
+                      />
+                    </Link>
                   ))}
                 </>
               )}
