@@ -54,14 +54,12 @@ const page = () => {
                         >
                           Download
                         </Link>
-                        <embed
-                          src={Detail?.url}
-                          type="application/pdf"
-                          style={{
-                            scrollbarWidth: "none",
-                          }}
-                          className="w-full h-200 bg-black"
-                        ></embed>
+                        <iframe
+                          src={`https://docs.google.com/viewer?url=${Detail?.url}&embedded=true`}
+                          width="100%"
+                          height="600px"
+                          style={{ border: "none" }}
+                        />
                       </div>
                     </>
                   ) : (
