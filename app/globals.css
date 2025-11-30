@@ -121,12 +121,18 @@ img {
 }
 
 .gallery_List {
-  column-count: 3;
+  column-count: 4;
 }
 
 @media screen and (max-width: 767px) {
   .gallery_List {
-    column-count: 2;
+    column-count: 3;
+  }
+}
+
+@media screen and (max-widht: 430px) {
+  .gallery_List {
+    column-count: 1;
   }
 }
 
