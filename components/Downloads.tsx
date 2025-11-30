@@ -47,7 +47,7 @@ const DownloadSection = () => {
   return (
     <div className="max-w-100 w-full flex flex-col items-start justify-start gap-1">
       {/* Header */}
-      <h2 className="font-bold text-mg text-slate-800">News and Events</h2>
+      <h2 className="font-bold text-mg text-slate-800">Downloads</h2>
       {/* Search */}
       <form className="w-full flex items-center justify-center">
         <input
