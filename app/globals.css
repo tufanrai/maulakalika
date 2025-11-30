@@ -81,11 +81,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Style the entire scrollbar */
-::-webkit-scrollbar {
-  width: 0px;
-}
-
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
