@@ -13,6 +13,7 @@ import hero from "@/public/Hydro electric power plant stock image_ Image of powe
 import Project_news_card from "@/components/cards/project_news_card";
 import HorizontalTimeline from "@/components/cards/TimelineCard";
 import ProjectsContents from "@/components/Contents/projects.contents";
+import { MdArrowOutward } from "react-icons/md";
 
 export default function Home() {
   const stats = [
@@ -98,8 +99,9 @@ export default function Home() {
                   tomorrow for all.
                 </p>
                 <Link href={"/projects"}>
-                  <button className="bg-slate-900 hover:bg-slate-800 text-white rounded-xs border border-white px-5 py-2 cursor-pointer ease duration-300 hover:scale-105">
-                    Explore Our Projects
+                  <button className="ease duration-300 bg-gradient-to-r from-primary to-orange-500 hover:bg-gradient-to-r hover:from-primary/70 hover:to-orange-500/70 text-white rounded-md border-[1px] border-white px-5 py-2 cursor-pointer flex items-center justify-center gap-1">
+                    Explore Our Projects{" "}
+                    <MdArrowOutward className="font-black text-xl" />
                   </button>
                 </Link>
               </div>
@@ -117,6 +119,20 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center hover:shadow-lg hover:shadow-third ease duration-300 transition-shadow"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-slate-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
           <div className="space-y-4 text-slate-700 leading-relaxed">
             <p>
               Maulika Hydropower Company Ltd. has been at the forefront of
@@ -130,24 +146,10 @@ export default function Home() {
               and uncompromised stewardship.
             </p>
             <Link href={"/about"}>
-              <button className="mt-4 bg-slate-900 hover:bg-slate-800 text-white rounded-xs px-5 py-2 cursor-pointer ease duration-300 hover:scale-105">
-                Learn more
+              <button className="mt-4 bg-slate-900 hover:bg-slate-800 text-white rounded-md px-5 py-2 cursor-pointer ease duration-300 flex items-center justify-center gap-1">
+                Learn more <MdArrowOutward className="font-black text-xl" />
               </button>
             </Link>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center hover:shadow-lg hover:shadow-third ease duration-300 transition-shadow"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-slate-600">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -210,8 +212,8 @@ export default function Home() {
           </div>
           <div className="w-full flex items-center justify-center pt-20 pb-10">
             <Link href={"/projects"}>
-              <button className="px-5 py-2 rounded-xs font-medium text-md bg-primary cursor-pointer ease duration-300 hover:shadow-lg/30 hover:shadow-primary hover:scale-105 text-slate-50">
-                See more
+              <button className="px-5 py-2 rounded-md font-medium text-md bg-primary cursor-pointer ease duration-300 hover:shadow-lg/30 hover:shadow-primary text-slate-50 flex items-center justify-center gap-1">
+                See more <MdArrowOutward className="font-black text-xl" />
               </button>
             </Link>
           </div>
