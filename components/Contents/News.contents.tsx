@@ -10,19 +10,17 @@ interface IProps {
   url: string;
 }
 
-const ProjectsContents = () => {
+const NewsContents = () => {
   const { data } = useQuery({
     queryKey: ["fetch files"],
     queryFn: fetchDownloadFiles,
   });
 
-  const filteredData = data?.files?.filter(
-    (file: any) => file.type == "Projects"
-  );
+  const filteredData = data?.files?.filter((file: any) => file.type == "News");
   return (
-    <section className="w-full h-1/2 flex flex-wrap  gap-1 items-start justify-start overflow-x-hidden overflow-y-auto px-5 md:px-0">
+    <section className="w-full h-1/2 flex flex-col gap-1 items-start justify-start overflow-x-hidden overflow-y-auto px-5 md:px-0">
       <h3 className="w-full text-xl md:text-2xl font-bold text-buttonColor mb-4 px-5 py-2 flex items-center justify-start gap-2">
-        Latest on Projects{" "}
+        Hot News{" "}
         <hr className="w-10 border-2 h-[1px] border-buttonColor bg-buttonColor rounded-lg" />{" "}
         <hr className="w-1 border-2 h-[1px] border-buttonColor bg-buttonColor rounded-full" />
       </h3>
@@ -49,4 +47,4 @@ const ProjectsContents = () => {
   );
 };
 
-export default ProjectsContents;
+export default NewsContents;
