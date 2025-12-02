@@ -20,9 +20,6 @@ export default function Contact() {
     onSuccess: () => {
       toast.success("Your message has successfully been sent");
       reset();
-      setTimeout(() => {
-        router.replace("/");
-      }, 3000);
     },
     onError: () => {
       toast.error("Something went wrong please try again later");

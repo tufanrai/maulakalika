@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Radley:ital@0;1&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Radley:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --primary-nave: rgb(5, 35, 97);
-  --gradient-color: #364E80;
+  --primary-nave: #052361;
+  --button-color: #466BB6;
+  --gradient-color: hsl(221, 41%, 36%);
   --gradient-color2: #9BA7BF;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -67,6 +68,7 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-buttonColor: var(--button-color);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -143,16 +145,22 @@ img {
 }
 
 
+/* Fonts styling */
+
 h1, h2, h3, h4, h5, h6{
   font-family: "Radley";
 }
 
-p {
+p, span {
   font-family: "Tinos";
 }
 
-a, li{
+a, li, button{
   font-family: "Hedvig Letters Serif";
+}
+
+input, textarea {
+  font-family: "Roboto Condensed";
 }
 
 @layer base {

@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import { Award, Target, Eye, Heart } from "lucide-react";
 import team from "@/public/Business team working on laptop to check the results of their work_ | Premium Photo.jpg";
+import Member_card from "@/components/cards/Member_card";
+import profile from "@/public/Portrait of a confident young smart looking man | Premium AI-generated image.jpg";
 
 export default function About() {
   return (
@@ -29,8 +32,10 @@ export default function About() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-start gap-2">
               Our Story
+              <hr className="w-10 border-2 h-[1px] border-buttonColor bg-buttonColor rounded-lg" />{" "}
+              <hr className="w-1 border-2 h-[1px] border-buttonColor bg-buttonColor rounded-full" />
             </h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
               <p>
@@ -85,15 +90,57 @@ export default function About() {
           ].map((value, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-slate-50 to-teal-50 rounded-2xl p-6 border border-slate-200"
+              className="bg-buttonColor/12 rounded-2xl p-6 border border-buttonColor/20 cursor-pointer ease duration-300 hover:scale-102 hover:shadow hover:shadow-lg hover:shadow-slate-300"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
                 <value.icon className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-slate-900 mb-2">{value.title}</h3>
               <p className="text-sm text-slate-600">{value.description}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50">
+        <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-start gap-2">
+          Our Leading members
+          <hr className="w-10 border-2 h-[1px] border-buttonColor bg-buttonColor rounded-lg" />{" "}
+          <hr className="w-1 border-2 h-[1px] border-buttonColor bg-buttonColor rounded-full" />
+        </h3>
+        <div className="w-full p-4 mt-8 flex flex-col gap-12">
+          {/* Executive Officer */}
+          <div className="w-full">
+            <Member_card
+              imageSrc={profile.src}
+              name="Jhon Doe"
+              designation="CEO"
+            />
+          </div>
+          {/* Directors */}
+          <div className="w-full flex flex-wrap items-center justify-evenly">
+            <Member_card
+              imageSrc={profile.src}
+              name="Jhon Doe"
+              designation="CEO"
+            />
+            <Member_card
+              imageSrc={profile.src}
+              name="Jhon Doe"
+              designation="CEO"
+            />
+            <Member_card
+              imageSrc={profile.src}
+              name="Jhon Doe"
+              designation="CEO"
+            />
+            <Member_card
+              imageSrc={profile.src}
+              name="Jhon Doe"
+              designation="CEO"
+            />
+          </div>
         </div>
       </section>
     </div>

@@ -48,12 +48,12 @@ const page = () => {
                         {Detail?.description}
                       </p>
                       <div className="w-full p-4 bg-slate-100">
-                        <Link
+                        <a
                           className="font-regural text-md text-slate-50 ease duration-250 hover:bg-red-600 px-5 py-2 rounded-t-md bg-red-500"
                           href={Detail?.url ?? ""}
                         >
                           Download
-                        </Link>
+                        </a>
                         <iframe
                           src={`https://docs.google.com/viewer?url=${Detail?.url}&embedded=true`}
                           width="100%"

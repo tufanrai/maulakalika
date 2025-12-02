@@ -9,7 +9,7 @@ const page = () => {
   });
 
   return (
-    <div className="w-full flex justify-center py-12 bg-slate-100">
+    <div className="w-full flex justify-center py-12 bg-neutral-200">
       <div className="max-w-[1280px] w-full h-screen flex justify-center">
         <div className="gallery_List">
           {data && data?.files
