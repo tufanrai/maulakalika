@@ -100,7 +100,7 @@ export default function Home() {
                   tomorrow for all.
                 </p>
                 <Link href={"/projects"}>
-                  <button className="ease duration-300 bg-gradient-to-r from-primary to-orange-500 hover:bg-gradient-to-r hover:from-primary hover:to-orange-600 text-white rounded-full border-[1px] border-white px-5 py-2 cursor-pointer flex items-center justify-center gap-1">
+                  <button className="ease duration-300 bg-gradient-to-r from-primary to-buttonColor hover:bg-gradient-to-r hover:from-primary hover:to-buttonColor/80 text-white rounded-full border-[1px] border-white px-5 py-2 cursor-pointer flex items-center justify-center gap-1">
                     Explore Our Projects{" "}
                     <MdArrowOutward className="font-black text-xl" />
                   </button>
@@ -124,7 +124,7 @@ export default function Home() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center text-slate-900 hover:text-orange-600 hover:shadow-lg hover:shadow-orange-200 ease duration-100 transition-shadow"
+                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center text-slate-900 hover:text-buttonColor hover:shadow-lg hover:shadow-buttonColor/20 ease duration-100 transition-shadow"
               >
                 <div className="text-3xl md:text-4xl font-bold mb-2">
                   {stat.value}

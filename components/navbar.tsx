@@ -33,14 +33,14 @@ const Navbar = () => {
               </div>
             </div>
             <div className="max-w-80 md:max-w-100 w-full flex flex-col md:flex-row items-end justify-between gap-2">
-              <span className="flex items-end justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-orange-500 hover:text-primary">
-                <CiMail className="font-black text-xl p-1 rounded-full w-8 h-8 bg-orange-500 text-white" />{" "}
+              <span className="flex items-end justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-buttonColor hover:text-primary">
+                <CiMail className="font-black text-xl p-1 rounded-full w-8 h-8 bg-buttonColor text-white" />{" "}
                 <span className="hidden md:block text-md">
                   info@example.com
                 </span>
               </span>
-              <span className="flex items-end justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-orange-500 hover:text-primary">
-                <CiPhone className="font-black text-xl p-1 rounded-full w-8 h-8 bg-orange-500 text-white" />{" "}
+              <span className="flex items-end justify-center gap-2 italic text-nav text-sm font-regural underline cursor-pointer ease duration-300 text-buttonColor hover:text-primary">
+                <CiPhone className="font-black text-xl p-1 rounded-full w-8 h-8 bg-buttonColor text-white" />{" "}
                 <span className="hidden md:block text-md">
                   +977 - (98)00000000
                 </span>
@@ -51,12 +51,12 @@ const Navbar = () => {
         {/* main nav */}
 
         {/* Desktop view */}
-        <div className="w-full flex items-center bg-primary hidden md:block py-2 border-t-2 border-orange-500">
+        <div className="w-full flex items-center bg-primary hidden md:block py-2 border-t-3 border-buttonColor">
           <div className="w-full flex justify-center px-5 md:px-8">
             <ul className="max-w-[1280px] w-full flex items-center justify-end gap-3 py-2 px-5 text-stone-100">
               <li className="mx-2 ml-auto">
                 <Link
-                  className="py-5 ease duration-300 hover:text-orange-500 px-2 font-medium text-md"
+                  className="py-5 ease duration-300 hover:text-buttonColor px-2 font-medium text-md"
                   href={"/"}
                 >
                   Home
@@ -64,7 +64,7 @@ const Navbar = () => {
               </li>
               <li className="mx-2">
                 <Link
-                  className="py-5 ease duration-300 hover:text-orange-500 px-2 font-medium text-md"
+                  className="py-5 ease duration-300 hover:text-buttonColor px-2 font-medium text-md"
                   href={"/about"}
                 >
                   About us
@@ -72,7 +72,7 @@ const Navbar = () => {
               </li>
               <li className="mx-2">
                 <Link
-                  className="py-5 ease duration-300 hover:text-orange-500 px-2 font-medium text-md"
+                  className="py-5 ease duration-300 hover:text-buttonColor px-2 font-medium text-md"
                   href={"/projects"}
                 >
                   Projects&Reports
@@ -80,7 +80,7 @@ const Navbar = () => {
               </li>
               <li className="">
                 <Link
-                  className="py-5 ease duration-300 hover:text-orange-500 px-2 font-medium text-md"
+                  className="py-5 ease duration-300 hover:text-buttonColor px-2 font-medium text-md"
                   href={"/gallery"}
                 >
                   Gallery
@@ -88,7 +88,7 @@ const Navbar = () => {
               </li>
               <li className="ml-auto">
                 <Link href={"/contact"}>
-                  <button className="px-5 py-2 rounded-full font-regural text-md text-white ease duration-300 cursor-pointer bg-orange-500 hover:bg-orange-600">
+                  <button className="px-5 py-2 rounded-full font-regural text-md text-white ease duration-300 cursor-pointer bg-buttonColor hover:bg-buttonColor/50">
                     Contact us
                   </button>
                 </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
         </div>
 
         {/* mobile view */}
-        <div className="w-full flex items-center bg-primary block md:hidden py-2 border-t-2 border-orange-500">
+        <div className="w-full flex items-center bg-primary block md:hidden py-2 border-t-3 border-buttonColor">
           <div className="w-full flex items-center justify-center px-8">
             <ul className="max-w-[1280px] w-full flex items-start justify-end">
               <li className="py-3">

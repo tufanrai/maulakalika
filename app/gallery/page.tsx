@@ -9,17 +9,21 @@ const page = () => {
   });
 
   return (
-    <div className="w-full flex justify-center py-12 bg-neutral-200">
+    <div className="w-full flex justify-center py-12 bg-buttonColor/10">
       <div className="max-w-[1280px] w-full h-screen flex justify-center">
         <div className="gallery_List">
           {data && data?.files
             ? data?.files?.map((file: any, index: number) => (
-                <img
+                <div
                   key={index}
-                  src={file?.url}
-                  alt={`media-${index}`}
-                  className="max-h-68 h-screen w-full object-contain object-center ease duration-300 cursor-pointer rounded-sm overflow-hidden"
-                />
+                  className="max-h-68 w-full overflow-hidden rounded-sm bg-buttonColor/40"
+                >
+                  <img
+                    src={file?.url}
+                    alt={`media-${index}`}
+                    className=" w-full object-cover object-center ease duration-300 cursor-pointer ease duration-300 hover:scale-102 rounded-sm"
+                  />
+                </div>
               ))
             : ""}
         </div>
